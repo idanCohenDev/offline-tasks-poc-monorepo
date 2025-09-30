@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { AppState } from 'react-native';
-import { QueryClientProvider } from '@tanstack/react-query';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import { queryClient, asyncStoragePersister } from './src/services/queryClient';
-import { registerBackgroundFetch } from './src/services/backgroundTask';
+import { registerBackgroundTask } from './src/services/backgroundTask';
 import queueManager from './src/services/queueManager';
 import { MainScreen } from './src/screens/MainScreen';
 
@@ -15,7 +14,7 @@ if (__DEV__) {
 
 export default function App() {
   useEffect(() => {
-    registerBackgroundFetch();
+    registerBackgroundTask();
     
     // Listen for app state changes and drain queue when coming to foreground
     const handleAppStateChange = (nextAppState: string) => {

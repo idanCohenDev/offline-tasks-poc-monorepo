@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pkill:*)",
+      "Bash(npm install:*)",
+      "WebFetch(domain:docs.expo.dev)",
+      "Bash(npx tsc:*)",
+      "Bash(npm start)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
